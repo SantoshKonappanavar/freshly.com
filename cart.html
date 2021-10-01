@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+            background-color: #fffdf7;
+        }
+        #products{
+            max-width: 68%;
+            display: grid;
+            grid-gap: 2%;
+            grid-template-columns: 23% 23% 23% 23%;
+            background-color: #fffdf7;
+        }
+        #products>div{
+           border: 5px solid whitesmoke;
+        }
+      
+        img{
+           width: 100%;
+        }
+        #cartfile img{
+            width: 100px;
+            height: 100px;
+            padding: 15px;
+
+        }
+        .mainbox{
+            width: 100%;
+         
+            display: flex;
+            flex-direction: row;
+        }
+        .mainbox > div{
+            margin: 10px;
+            height: 750px;
+            background-color: #fffdf7;
+        }
+        .mainbox > div:nth-child(2){
+           overflow-y: scroll;
+           scrollbar-base-color: gold;
+        }
+        .mainbox > div:nth-child(1){
+           overflow-y: scroll;
+           scrollbar-base-color: gold;
+        }
+        .mainbox > div:nth-child(1)>div>div{
+            display:flex;
+            flex-direction: row;
+        }
+        .mainbox > div:nth-child(1)>div>div>div{
+            margin: 5px;
+            font-weight:bold;
+            width: 25%;
+            font-size: 15px;
+            color: gray;
+            position:relative;
+            bottom: 0;
+            left: 0;
+        }
+        .mainbox > div:nth-child(1)>div button{
+            background-color:#437dfc;
+            border: 1px solid #437dfc;
+            width: 50%;
+            font-size: 15px;
+            color: white;
+            font-weight: bolder;
+            position: relative;
+            bottom: 0;
+            right: 0;
+        }
+        .mainbox > div:nth-child(1)>div button:hover{
+            background-color: #5076df;
+        }
+        .mainbox > div:nth-child(1)>div{
+            display:flex;
+            flex-direction: column;
+        }
+        
+        .mainbox > div:nth-child(1)>div>div{
+            padding: 10px;
+           height: 40px;
+        }
+        
+        .mainbox > div:nth-child(1)>div>div:nth-child(2){
+
+            font-size: 16px;
+            font-weight:600;
+        }
+        .mainbox > div:nth-child(1)>div>div:nth-child(3){
+            font-size: 15px;
+            color: gray;
+            font-weight:bold;
+        }
+        #cartfile{
+
+          width: 600px;
+          height: 500px;
+          background-color: whitesmoke;
+        }
+        #cartfile > div{
+        border: 1px solid whitesmoke;
+        margin: 30px;
+        display: flex;
+        flex-direction: row;
+        }
+        #cartfile > div:hover, #cartfile > div>p:hover{
+            background-color: whitesmoke;
+        }
+        #cartfile >div>button{
+       
+          background-color: #437dfc;
+          width: 110px;
+          height: 50px;
+          color: white;
+          font-weight: bolder;
+          font-size: 15px;
+          margin-top: 22px;
+        }
+        #cartfile >div>p{
+            width: 200px;
+            vertical-align: middle;
+            height: 50px;
+            margin-top: 22px;
+        }
+        #footer{
+          padding: 5px;
+          max-width: 67.5%;
+          background-color: rgb(230, 238, 240);
+        }
+        #footer > table{
+          width: 100%;
+          opacity: 0.9;
+       
+        }
+        #footer > table > tbody >tr>td:nth-child(3)>a,#footer > table > tbody >tr>td:nth-child(1)>a{
+          font-size: 16px;
+          font-weight: bolder;
+          color: #437dfc;
+        }
+        #footer > table > tbody >tr>td:nth-child(2),  #footer > table > tbody >tr>td:nth-child(3){
+          text-align: right;
+        }
+        #footer > table > tbody >tr>td:nth-child(2)>select{
+          width: 200px;
+          opacity: 0.5;
+          height: 40px;
+          font-size: 15px;
+          font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+ 
+    <div id="footer">
+    <table>
+      <tr>
+        <td> <a href=""> &nbsp;< &nbsp; back</a></td>
+        <td>
+          <select>
+            <option value="Sunday">Sunday</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednsaday">Wednsaday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+          </select>
+        </td>
+        <td>
+          <a href="">Customer Support</a>
+        </td>
+      </tr>
+    </table>
+  </div>
+    <div class="mainbox">
+            <div id="products"></div>
+            <div id="cartfile">
+            </div>
+    </div>
+   
+   <!-- <a href="cart.html" ><button>Add to Cart</button></a> -->
+   <!-- <button onclick="lowtohigh()">low to high</button>
+   <button onclick="hightolow()">high to low</button> -->
+</body>
+</html>
+<script>
+    let data= [
+    {
+      img: "https://res.cloudinary.com/freshly/image/upload/c_fill,dpr_2,f_auto,w_580/v1608747288/production-meal-image-29fee2e7-8e88-4cd3-aad9-0e7d25671f7f.jpg",
+      name: "Steak Peppercorn",
+      price: "with Sautéed Carrots & French Green Beans",
+      bill1:"Gluten Free",
+      bill2:"500 Cals",
+    },
+    {
+      name: "Homestyle Chicken",
+      price: "with Masterful Mac & Cheese",
+      img: "https://res.cloudinary.com/freshly/image/upload/c_fill,dpr_2,f_auto,w_580/v1602723110/production-meal-image-0a78bae3-2e0c-4ab7-b420-154ed262d4d0.jpg",
+      bill1:"Gluten Free",
+      bill2:"560 Cals",
+    },
+    {
+      name: "Cauliflower Shell Beef Bolognese",
+      price: "with Nonna’s Soffritto & Italian Cheeses",
+      img: "https://res.cloudinary.com/freshly/image/upload/c_fill,dpr_2,f_auto,w_580/v1625862402/production-meal-image-2d69b7cf-1233-428f-a8b4-bc9f77559500.jpg",
+      bill1:"Gluten Free",
+      bill2:"540 Cals",
+    },
+    {
+      name: "Bunless Bison Burger*",
+      price: "with Spring Succotash & Loaded Cauliflower",
+      img: "https://res.cloudinary.com/freshly/image/upload/c_fill,dpr_2,f_auto,w_580/v1614275676/production-meal-image-3171df37-1aa1-46d7-92df-3fd823b4a531.jpg",
+      bill1:"Gluten Free",
+      bill2:"480 Cals",
+    },
+    {
+      name: "Sausage Baked Penne",
+      price: "with Sautéed Zucchini & Spinach",
+      img: "https://res.cloudinary.com/freshly/image/upload/c_fill,dpr_2,f_auto,w_580/v1611760579/production-meal-image-aba62473-4c2a-4708-a0c1-3ed792dc70c9.jpg",
+      bill1:"Gluten Free",
+      bill2:"480 Cals",
+    },
+    {
+      name: "Savory-Sweet Chicken Teriyaki Bowl",
+      price: "with Basmati Rice & Veggies",
+      img: "https://res.cloudinary.com/freshly/image/upload/c_fill,dpr_2,f_auto,w_580/v1631655768/production-meal-image-a9a473c8-c1e0-4b3e-a6f8-ffcbc4e8b21c.jpg",
+      bill1:"Gluten Free",
+      bill2:"500 Cals",
+    },
+    {
+      name: "Protein-Packed Chicken Parm",
+      price: "with Mozzarella & Garlicky Broccoli",
+      img: "https://res.cloudinary.com/freshly/image/upload/c_fill,dpr_2,f_auto,w_580/v1607770959/production-meal-image-7a62bb89-9bcb-4f1f-9f0f-d8372698d48e.jpg",
+      bill1:"Gluten Free",
+      bill2:"500 Cals",
+    },
+    {
+      name: "Golden Oven-Fried Chicken & Mash",
+      price: "with Roasted Sweet Corn",
+      img: "https://res.cloudinary.com/freshly/image/upload/c_fill,dpr_2,f_auto,w_580/v1602723269/production-meal-image-0e5c1b0a-7c87-4b3d-a476-3065980a3f2f.jpg",
+      bill1:"Gluten Free",
+      bill2:"500 Cals",
+    },
+    {
+      name: "Chicken Livorno",
+      price: "with Hearty White Beans & Kale",
+      img: "https://res.cloudinary.com/freshly/image/upload/c_fill,dpr_2,f_auto,w_580/v1602722020/production-meal-image-1a05b254-2fc5-4eec-9cec-5b1cde753c06.jpg",
+      bill1:"Gluten Free",
+      bill2:"500 Cals",
+    },
+    {
+      name: "Creamy Chicken Korma",
+      price: "with Ten-Veggie Medley",
+      img: "https://res.cloudinary.com/freshly/image/upload/c_fill,dpr_2,f_auto,w_580/v1617907323/production-meal-image-ffc15ae3-23b7-4e69-922a-75d54ed4dba3.jpg",
+      bill1:"Gluten Free",
+      bill2:"500 Cals",
+    },
+    {
+      name: "Zingy Buffalo Chicken",
+      price: "with Loaded Cauliflower",
+      img: "https://res.cloudinary.com/freshly/image/upload/c_fill,dpr_2,f_auto,w_580/v1622151957/production-meal-image-6d732252-44be-4475-ad02-47e7960aca8c.jpg",
+      bill1:"Gluten Free",
+      bill2:"500 Cals",
+    },
+    {
+      name: "White Bean Turkey Chili Bowl",
+      price: "with Basmati Rice & Cheddar Cheese",
+      img: "https://res.cloudinary.com/freshly/image/upload/c_fill,dpr_2,f_auto,w_580/v1609775112/production-meal-image-17ade4a4-7351-4ff8-95c6-765d70e5ea5d.jpg",
+      bill1:"Gluten Free",
+      bill2:"500 Cals",
+    },
+    {
+      name: "Tangy Turmeric Turkey Bowl",
+      price: "with Sweet Potato & Shredded Brussels",
+      img: "https://res.cloudinary.com/freshly/image/upload/c_fill,dpr_2,f_auto,w_580/v1608573926/production-meal-image-9379e7f8-5337-476a-bef9-7ba522eb613b.jpg",
+      bill1:"Gluten Free",
+      bill2:"500 Cals",
+    },
+    {
+      name: "Herb-Roasted Chicken",
+      price: "with Dairy-Free Cheezy Fusilli",
+      img: "https://res.cloudinary.com/freshly/image/upload/c_fill,dpr_2,f_auto,w_580/v1622141969/production-meal-image-0f35bc5b-5337-4ccc-b139-3611c4429275.jpg",
+      bill1:"Gluten Free",
+      bill2:"500 Cals",
+    },
+    {
+      name: "Very Verde Chicken",
+      price: "with Super Greens & Roasted Cauliflower",
+      img: "https://res.cloudinary.com/freshly/image/upload/c_fill,dpr_2,f_auto,w_580/v1602259209/production-meal-image-4aa973ed-846f-4957-9341-272c1125725d.jpg",
+      bill1:"Gluten Free",
+      bill2:"500 Cals",
+    },
+    {
+      name: "Lemony Mediterranean Chicken",
+      price: "with Riced Broccoli Pilaf & Roasted Carrots",
+      img: "https://res.cloudinary.com/freshly/image/upload/c_fill,dpr_2,f_auto,w_580/v1623443004/production-meal-image-d730ab11-3cbe-45ef-a91c-6858940b3779.jpg",
+      bill1:"Gluten Free",
+      bill2:"500 Cals",
+    },
+  ];
+  //1.Run the foreach loop on products data and console log indiuasual product names.
+  //2.appemd this data on dom
+  //2.1 createelement 
+  let parent =document.getElementById("products");
+  function showproducts(data) {
+    parent.innerHTML =null;
+  data.forEach(function(products){
+      console.log(products.name);
+      let div = document.createElement("div");
+
+      let img = document.createElement("img");
+      img.src = products.img
+
+      let product_price = document.createElement("div");
+      product_price.textContent = products.price
+
+      let product_name = document.createElement("div");
+      product_name.textContent =products.name;
+      let divs=document.createElement("div");
+      let bill1=document.createElement("div");
+      bill1.textContent=products.bill1;
+      let bill2 = document.createElement("div");
+      bill2.textContent=products.bill2;
+      let addtocart_btn = document.createElement("button");
+      addtocart_btn.innerHTML = "+ Add";
+      divs.append(bill1,bill2,addtocart_btn)
+      addtocart_btn.onclick = function (){
+          addtoCart(products);
+          show()
+      };
+      div.append(img,product_name,product_price,divs);
+      parent.append(div);
+  });
+}
+showproducts(data);
+
+
+// check if cart is exist in local storage
+if(localStorage.getItem("cart")==null){
+    localStorage.setItem("cart",JSON.stringify([]));
+}
+  function addtoCart(p){
+    let prod_cart =JSON.parse(localStorage.getItem("cart"));
+    prod_cart.push(p);
+    localStorage.setItem("cart",JSON.stringify(prod_cart))
+    console.log("prod_cart:",prod_cart);
+}
+// function lowtohigh(){
+//   let arr = data.sort(function(a,b){
+//     return a.price - b.price;
+//   });
+//   showproducts(arr);
+// }
+// function hightolow(){
+//   let arr = data.sort(function(a,b){
+//     return b.price - a.price;
+//   });
+//   showproducts(arr);
+// }
+
+
+let cart = JSON.parse(localStorage.getItem("cart"));
+console.log(cart)
+let main =document.getElementById("cartfile");
+function show() {
+  cart.forEach(function(products){
+      console.log(products.name);
+      let div = document.createElement("div");
+
+      let img = document.createElement("img");
+      img.src = products.img
+
+    //   let product_price = document.createElement("p");
+    //   product_price.textContent = products.price
+
+      let product_name = document.createElement("p");
+      product_name.textContent =products.name;
+
+      let addtocart_btn = document.createElement("button");
+      addtocart_btn.innerHTML = "+ Add";
+      
+      addtocart_btn.onclick = function (){
+          addtoCart(products);
+      };
+      div.append(img,product_name,addtocart_btn);
+      main.append(div);
+  });
+}
+show()
+
+</script>
+</body>
+</html>

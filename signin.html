@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freshly - Login</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            text-decoration: none;
+            color: #303030;
+        }
+        .nav{
+            background-color: white;
+            border: 3px solid whitesmoke;
+            display: flex;
+            flex-direction: row;
+            height: 60px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            position: sticky;
+            cursor: pointer;
+        }
+      
+        .nav > div{
+            margin: 10px;
+            font-size: 15px;
+            width: 100%;
+        }
+        .nav > div:nth-child(2){
+            padding: 6px;
+        }
+        .nav > div:nth-child(2){
+            flex-basis: 90%;
+            text-align: left;
+        }
+        .nav > div:nth-child(1) >div{
+            display: inline-block;
+            vertical-align: middle;
+            margin: 12px 0 0 6px;
+        }
+        .nav > div:nth-child(1) >div >a:hover,.nav > div:nth-child(3) >div >a:hover{
+            color:#3167ff;
+        }
+        .image-nav{
+            width: 105px;
+        }
+        .nav > div:nth-child(3) > div{
+            margin: 12px;
+            text-align: center;
+            margin-left: 90px;
+        }
+        .nav > div:nth-child(4){
+            margin: 12px;
+            display: flex;
+            flex-direction: row;
+            margin-left: 90px;
+        }
+        .nav > div:nth-child(4)>div{
+            font-size: 15px;
+            flex-basis: 20%;
+            margin-top: 5px;
+            text-align: center;
+        }
+        .navbutton{
+            margin-top: -30px;
+            padding: 8px;
+            background-color: #437dfc;
+            color: white;
+            font-weight: bolder;
+            width: 100px;
+            height: 40px;
+            cursor: pointer;
+            
+        }
+        .navbutton:hover,.mainbox2 >div:nth-child(1) >div > div > button:hover{
+            background-color: #437dfc;
+            transform: translatex(3px);
+            position: relative;
+        }
+        #main{
+            margin: auto;
+        }
+        .mainbox12{
+            background-color: #fef9ea;
+            width: 50%;
+            padding: 40px;
+        }
+        .mainbox12 > div{
+            padding: 10px;
+        }
+        .font{
+            font-size: 40px;
+            line-height: 44px;
+            color: #333;
+        }
+        .meals{
+            font-size: 20px;
+            font-weight: 700;
+            box-sizing: border-box;
+            display: block;
+            line-height: 1.43em;
+        }
+        #email{
+            font-size: 14px;
+            line-height: 16px;
+            font-weight: 700px;
+            margin-bottom: -10px;
+        }
+        #top{
+          margin-bottom: -10px;
+        }
+        .signinform{
+            margin-top:16px;
+            width: 100%;
+        }
+        .footerbox h3{
+        color: gray;
+        font-size: 17px;
+        font-weight: bolder;
+    }
+      
+       .footerbox{
+           bottom: 0;
+           position: fixed;
+           margin: auto;
+           position: sticky;
+           display: flex;
+           flex-direction: row;
+           width: 80%;
+           margin: auto;
+           margin-right:45px;
+       }
+       .footerbox >div{
+           flex-basis:1;
+           width: 100%;
+           line-height: 1.8em;
+       }
+       .footerbox >div:nth-child(2),.footerbox >div:nth-child(3),.footerbox >div:nth-child(1),.footerbox >div:nth-child(4){
+          font-size: 13px;
+          color:#666;
+          font-weight: 400;
+       }
+       .footerbox >div > div{
+           margin-bottom: 15px;
+           font-size: 16px;
+           color: #333;
+           font-weight: 400;
+       } 
+       .footerbox >div:nth-child(1)>div>p{
+           font-size: 10px;
+           margin-top: -8px;
+           color: gray;
+       }
+     
+       .image-footer{
+           width: 20px;
+           height: 20px;
+           background-color: whitesmoke;
+       }
+       .image-footer1{
+           width: 120px;
+           height: 40px;
+       }
+           .footerbox >div:nth-child(2),.footerbox >div:nth-child(3),.footerbox >div:nth-child(1),.footerbox >div:nth-child(4){
+          font-size: 13px;
+          color:#666;
+          font-weight: 400;
+       }
+        @media (min-width:400px) {
+            .nav > div:nth-child(3) > div{
+               margin-left: 0px;
+        }
+            #footer{
+        padding: 50px;
+       }
+            .footerbox > div > a > p{
+           margin-bottom: 10px;
+           font-size: 17px;
+           color: #437dfc ;
+           font-weight: 500;
+           white-space: wrap;
+           text-decoration:underline;
+       }
+       .footerbox > div > a > p:hover{
+           color:#437dfc;
+       }
+       .image-footer2,.image-footer1{
+                float: left;
+                padding: 2px;
+              margin-left: 20px;
+            }
+            .footerbox{
+                flex-direction: column;
+                text-align: center;
+            }
+            .footerbox >div:nth-child(4)> div:nth-child(2)>a{
+           margin:10px;
+       }
+       .non{
+                display: none;
+            }
+          .nav2 > div{
+  width: 20px;
+  height: 2px;
+  background-color: gray;
+  margin: 3px 0;
+          }
+          .menu{
+              display: none;
+          }
+          .dlt{
+            display: none;
+          }
+          .navbutton{
+              margin-left: 40px;
+          }
+          .forgot{
+              flex-direction: column;
+          }
+          form > div{
+                width: 80%;
+            }
+        }
+        @media (min-width:1024px){
+            .nav > div:nth-child(3) > div{
+            margin-left: 90px;
+        }
+            #footer{
+        padding: 10px;
+       }
+            .footerbox > div > a > p{
+           margin-bottom: 10px;
+           font-size: 14px;
+       }
+            .footerbox >div:nth-child(4)> div:nth-child(2)>a{
+           margin:3px;
+       }
+     
+            .non{
+                display: unset;
+            }
+            .footerbox{
+                flex-direction: row;
+                text-align: left;
+            }
+            .visi{
+            display: none;
+        }
+        .image-footer2,.image-footer1{
+            margin-left: -2px;
+            clear: left;
+        }
+            form > div{
+                width: 35%;
+            }
+            .nav2 {
+                display: none;
+            }
+            .menu{
+                display: unset;
+            }
+            .dlt{
+                display: unset;
+            }
+            .navbutton{
+              margin-left:unset;
+          }
+          .forgot{
+              flex-direction: row;
+          }
+        }
+        .login{
+            background-color:#fffdf7 ;
+            width: 100%
+        }
+        .login >div>h1{
+            margin:0px 0px 40px;
+            font-size: 45px;
+            text-align: center;
+            padding-top: 60px ;
+        }
+        form{
+         display: flex;
+         flex-direction: column;
+        }
+        form > div{
+            margin: 20px auto;
+            padding: 10px;
+        }
+        form >div>p{
+            font-size: 15px;
+            margin-bottom: 5px;
+            font-weight:lighter
+        }
+        input{
+           width: 100%;
+            height: 40px;
+            font-size: 15px;
+            border: 1px solid black;
+        }
+        .button{
+            background-color:#437dfc ;
+            color: white;
+            font-size: 15px;
+            font-weight: bolder;
+            border: 1px solid #437dfc;
+        }
+        .button:hover{
+            background-color:#174ee6 ;
+        }
+        .forgot{
+            display: flex;
+            text-align: center;
+        }
+        .forgot >div{
+            margin: 5px;
+            font-size: 15px;
+            width: 100%;
+        }
+        .color{
+            color: #437dfc ;
+        }
+        .color:hover{
+            color: #437dfc ;
+        }
+        .top{
+            margin-top: -5px;
+        }
+    </style>
+</head>
+<body>
+    <header class="nav">
+        <div class="menu">
+           <div><a href="cart.html">Plans & Menu</a></div>
+           <div><a href="">How it Works</a></div>
+           <div><a href="">Gifts</a></div>
+           <div><a href="">Refer a Friend</a></div>
+           <div><a href="">Help</a></div>
+        </div>
+        <div class="nav2">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div ><div class="middle">
+            <a href="index.html"><img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5fc4feea074f5b86a6c62285_freshly-logo-R.svg" alt="image" class="image-nav" /></a>
+            </div>
+        </div>
+        <div>
+            <div class="dlt">Get $30</div>
+            <div class="dlt">Help</div>
+            <div class="dlt"><a href="signin.html">Login</a></div>
+            <div><a href="signup.html"><button class="navbutton">Sign Up</button></a></div>
+        </div>
+    </header>
+    <div class="login">
+        <div>
+            <h1>Log In</h1>
+        </div>
+        <div>
+    <form onsubmit="signin(event)" id="myform" action="">
+        <div>
+            <p>Email</p>
+        <input type="text" placeholder="you@domain.com" id="email"/>
+        </div>
+        <div>
+            <p>Password</p>
+        <input type="password" placeholder="enter password" id="password"/>
+        </div>
+         <div class="top">
+        <input type="submit"  value="Log In" class="button"/>
+        </div>
+        <div class="forgot top">
+            <div><p>Forgot Password</p></div>
+            <div><p>Don'thave an account?<a href="signup.html" class="color">Get Started</a></p></div>
+        </div>
+    </form>
+    </div>
+    </div>
+    <div id="footer">
+
+
+        <div class="footerbox">
+
+        <div class="non">
+            <div><a href="index.html"><img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5fc4feea074f5b86a6c62285_freshly-logo-R.svg" alt="image not found" class="image-nav" /></a></div>
+            <div><p>@ Freshly Inc</p></div>
+        </div>
+
+        <div>
+            <div>
+            <h3 class="non">Company</h3></div>
+            <a href=""><p>Careers</p></a>
+            <a href=""><p>Contact Us</p></a>
+            <a href=""><p>Press</p></a>
+            <a href=""><p>Terms</p></a>
+            <a href=""><p>Privacy</p></a>
+            <!-- <a href=""><p class="non">Affilates</p></a> -->
+            <!-- <a href=""><p class="non">Partnership</p></a> -->
+        </div>
+
+        <div id="learn">
+            <div >
+            <h3 class="non">Learn More</h3></div>
+            <!-- <a href=""><p class="non"> Plans & Menu</p></a>
+            <a href=""><p class="non">Why Freshly?</p></a> -->
+            <a href=""><p class="non">Fifts</p></a>
+            <a href=""><p>FAQs</p></a>
+            <a href=""><p>Blog</p></a>
+            <a href=""><p>Students</p></a>
+        </div>
+
+        <div>
+            <div>
+            <h3 class="non">Join us</h3></div>
+            <div>
+                <a href=""><img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f52423bbc67c09879c5a19b_5d795c37fedbb6017d824b02_icons8-facebook-old-30.jpg" class="image-footer" /></a>
+                <a href=""><img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f52423ad92101de48f410c7_5d10dfc0ef515f74b875a42c_icons8-instagram-50.jpg" class="image-footer"/></a>
+                <a href=""><img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f52423bd050163202b341e8_5d10dfc00442bfc99d3d6828_icons8-twitter-filled-50.jpg" class="image-footer" /></a>
+                <a href=""><img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f52423a6b26e039d505425e_5d10dfbfef515faad975a42b_icons8-pinterest-filled-50.jpg" class="image-footer" /></a>
+            </div>
+            <div><a href=""><img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5d6439d4fb92e7630e46976b_Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" class="image-footer2" /></a></div>
+            <div><a href=""><img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5d643dd558306bfe1df5ef8b_google-play-badge-p-500.png" class="image-footer1" /></a></div>
+        </div>
+        <div class="visi"><p>@ Freshly Inc</p></div>
+       </div>
+
+    </div>
+    <script>
+         function signin(e){
+            e.preventDefault();
+            let myform = document.getElementById("myform");
+            let email = myform.email.value;
+            let password = myform.password.value;
+            let all_users = JSON.parse(localStorage.getItem("users"));
+           
+            all_users.forEach(function(user){
+                if(user.email===email && user.password===password){
+                    window.location.href = "index.html";
+                }else if(user.email!==email || user.password !==password || email==="" ||password==="") {
+                   alert("enter valid email & password");
+                }
+            });
+         }
+    </script>
+</body>
+</html>

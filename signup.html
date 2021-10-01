@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freshly - join Now - Get Started</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+      .nav{
+            position: fixed;
+            width: 100%;
+            top: 0;
+            position: sticky;
+            cursor: pointer;
+         background-color: white;
+          top: 0;
+          display: flex;
+          flex-direction: row;
+          height: 60px;
+      }
+      .nav > div{
+          width: 100%;
+          margin: 20px;          
+      }
+     
+     
+      .nav > div:nth-child(2){
+          display: flex;
+          flex-direction: row;
+          color: gray;
+          margin-top: 5px;
+      }
+      .nav > div:nth-child(2)>div{
+          margin: 10px;
+          display: flex;
+          flex-direction: row;
+
+          width: 100%;
+      }
+      .nav > div:nth-child(2)>div>p{
+          margin: 10px;
+      }
+        .container{
+           max-width:1340px;
+            background-image: url("https://res.cloudinary.com/freshly/image/upload/c_crop,g_auto,dpr_auto,q_30,w_1500,h_900/v1494958610/joinnow-southchicken.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position-x: center;
+            background-position-y: center;
+        }
+        #form{
+            position: relative;
+            background-color: hsla(0,0%,100%,.8);
+            margin: auto;
+            padding: 40px;
+        }
+        .heading > h1{
+
+            font-size:48px;
+            max-width: 100%;
+            margin-bottom: 55px;
+        }
+        .heading>h3{
+            font-size:25px;
+
+            margin-bottom: 40px;
+        }
+        .flex{
+            display:flex;
+        }
+        .flex>div{
+            margin: 10px;
+            height: 55px;
+            flex-basis: 100%;
+        }
+        .flex > div > input{
+            width:99.56%;
+            height: 50px;
+            font-size: 20px;
+            border: 2px solid lightgray;
+        }
+        .button{
+            background-color: #437dfc;
+            color: white;
+            font-size: 15px !important;
+            font-weight: bolder;  
+            cursor: pointer;
+            border: 2px solid #437dfc !important;
+        }
+        span{
+            color:#437dfc ;
+        }
+        span:hover{
+           color:  #437dfc;
+        }
+        .para{
+            font-size: 14px;
+        }
+        .button:hover{
+            background-color:#437dfc ;
+        }
+          .panel{
+             padding: 0 18px;
+             display: none;
+             background-color: white;
+             overflow: hidden;
+          }
+          .active, .cordian:hover {
+             color: #437dfc;
+           }
+           .buttons{
+            background-color: #fffdf7;
+            padding: 100px;
+            margin: auto;
+           }
+           .cordian{
+            background-color: #fffdf7;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            margin: 10px;
+            border:2px solid whitesmoke;
+             text-align: left;
+            font-size: 15px;
+             transition: 0.4s;
+             font-weight: bolder;
+           }
+           .common{
+               font-size: 25px;
+               text-align: center;
+               font-weight: 100;
+               margin-top: 50px;
+               margin-bottom: 30px;
+           }
+           
+           .buttons p{
+               text-align: left;
+               font-size: 18px;
+               line-height: 1.3em;
+               background-color: #fffdf7;
+           }
+        @media (min-width:400px) {
+            .nav > div:nth-child(3)>div{
+          margin: 5px;
+          justify-items: right;
+      }
+            .nav > div:nth-child(1),.nav > div:nth-child(3){
+                display:none;
+            }
+            .flex{
+                flex-direction: column;
+            }
+            .container{
+               padding: 15px;
+            }
+            .flex{
+                margin-bottom: 25px;
+            }
+            .heading > h1{
+                margin-bottom:20px
+            }
+            .heading > h3{
+                margin-bottom: 10px;
+            }
+            .image{
+                display:unset;
+            }
+        }
+      
+        @media (min-width:1024px) {
+            .nav > div:nth-child(3){
+          display:flex;
+          flex-direction: row;
+          justify-content: flex-end;
+      }
+            .nav > div:nth-child(1){
+                display:unset;
+            }
+           
+            .flex{
+                flex-direction: row;
+            }
+            .flex>div:nth-child(2),.flex>div:nth-child(3){
+                flex-basis:40%;
+            }
+            .container{
+                padding: 50px;
+            }
+            #form{
+                width: 50%;
+            }
+            .flex{
+                margin-bottom: 60px;
+            }
+            .heading > h1{
+                margin-bottom: 55px
+            }
+            .heading > h3{
+                margin-bottom: 40px;
+            }
+            .image{
+                display: none;
+            }
+        }
+        .cordian{
+            font-size: 15px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <div>
+        <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5fc4feea074f5b86a6c62285_freshly-logo-R.svg" style="width: 140px;">
+    </div>
+    <div>
+        <div><p>Plan</p><p>></p></div>
+        <div><p>Day</p><p>></p></div>
+        <div><p>Meals</p><p> > </p></div>
+        <div><p>Checkout</p><p> > </p></div>
+    </div>
+    <div>
+        <div><a href=""><img src="https://d3v07tj3sxpg3g.cloudfront.net/icons-watermark/02hsSUKe95cdk3JckFmCi6.png" style="width: 30px;" /></a></div>
+        <div><a href=""><p style="color: #437dfc;">Customer Support</p></a></div>
+    </div>
+</nav>
+
+    <div id="main">
+
+
+    <div class="container">
+      <div id="form">
+    <form onsubmit="signup(event)" id="myform" action="">
+        <div class="image">
+            <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5fc4feea074f5b86a6c62285_freshly-logo-R.svg" style="width: 140px;">
+        </div>
+        <div class="heading">
+            <h1>Dinner's ready!</h1>
+            <h3>Cheaf-prepared, health meals delivered weekly</h3>
+        </div>
+        <div class="flex">
+
+        <div>
+        <input type="text" placeholder="Email" id="email">
+        </div>
+
+        <div>
+        <input type="password" placeholder="password" id="password">
+        </div>
+        <div>
+            <input type="submit" value="Continue" class="button"/>
+        </div>
+        </div>
+
+        <div class="para" >
+        <p>Alredy have an acount? <a href=""><span>log in</span></a></p><br/>
+        <p>By continuing,you agree to aour <span>Terms </span>and <span>Privacy Policy</span> & will receive  emails from freshly</p>
+        </div>
+    </form>
+</div>
+
+    </div>
+
+
+       <div class="common">
+           <div >
+               <h1>Common Questions</h1>
+           </div>
+           <div class="buttons">
+               <button class="cordian">How many portions are your meals?
+            </button>
+                <p class="panel">All of our meals are single serving and meant to feed an average adult. Our 6-meal plan is perfect for a person looking for 6 dinners (or lunches!) a week. On average, our meals weigh in at just about 13 ounces, which is about 10% larger than similar competitors. What’s even better: our meals average just 500 calories and range from 300 to 650 calories. If you have a larger household, we do offer a 12 meal per week subscription (it’s perfect for a family of 4 looking for 3 meals per week). Plus, you can always order multiple subscriptions.</p>
+
+               <button class="cordian">Do you accommodate dietary preferences?</button>
+               <p class="panel">We accommodate a variety of dietary preferences, including plenty of gluten-free certified and peanut-free options. As a customer, you can set your own dietary preferences and easily find the meals that work for you. You can also check out individual ingredient lists for each dish if you have specific concerns, or contact us at support@freshly.com for help making selections. If you’re unable to place an order that fits your preferences now, be sure to check back frequently as we’re always adding new and exciting dishes.</p>
+               
+               <button class="cordian">How long do the meals last?
+            </button>
+            <p class="panel">Our meals are chef prepared and delivered fresh, so typically they have a refrigerated shelf life of about 3-5 days. Select items (such as seafood) are best eaten first, so we’ll add a badge on the package to let you know. We usually suggest enjoying these meals within the first few days of receiving your order, but you can always check their exact use-by date on the back-of-pack nutrition label. If you’re ever unable to finish your meals within their shelf life, you can always pop them into the freezer for extended storage. Just be sure to microwave your meal straight from the freezer and add a few extra minutes to reach the 165° F internal temperature we recommend.</p>
+               <button class="cordian">How do I heat up my meals?
+            </button>
+            <p class="panel">Your meals will come to you fully prepared so you just have to heat ‘em up in the microwave. On the back of each meal, you’ll find our easy steps for heating, but generally, the meals heat up in about 3 minutes (depending on your microwave). If you’re unsure, start at 2 minutes and heat in 30–second increments until the meal reaches an inner temperature of 165° F. Our meals are packaged to be heated in the microwave (for the ultimate convenience), but you can heat them in the oven if you’d like. Just so you know, our current meal containers aren’t safe for the oven or stovetop, so you’ll have to transfer your food to heat it up. You can check out the full oven reheat directions in our FAQ.</p>
+               <button class="cordian">How does shipping work?
+            </button>
+            <p class="panel">To help guarantee your meals arrive in the freshest condition, there is a small shipping fee associated with your order. We deliver to all states within the continental U.S., and our shipping partners offer delivery every day of the week. The exact days that we can reach you will depend on your ZIP code and the carrier delivering your Freshly meals. Whether you're signing up or updating your typical delivery day, we'll show you all the days available to you so you can choose what's best for you.</p>
+               <button class="cordian">How does the subscription work?
+            </button><p class="panel">Every week you get to pick your selection of meals from our weekly rotation. Our meals cost as low as $8.99/meal, and come in five plan sizes: 4, 6, 8, 10, or 12 meals per week. Once you select your plan, you'll pick the most convenient delivery day for you, and we'll ship your chef-cooked meals right to your doorstep! If you ever need to skip or cancel a week, it's easy to make changes to your upcoming delivery before the weekly deadline.</p>
+           
+       </div>
+
+    </div>
+
+
+
+
+    <script>
+        
+        function signup(e){
+            e.preventDefault();
+            let myform = document.getElementById("myform");
+            let email = myform.email.value;
+            let password = myform.password.value;
+            console.log(email,password);
+            
+            if(localStorage.getItem("users")==null){
+                localStorage.setItem("users", JSON.stringify([]));
+            }
+            //grab and prepare user data
+            let user = {
+                email,
+                password,
+            }
+            if(user.email==="" || user.password===""){
+                alert("Enter valid Email and Password");
+            }
+            else{
+                window.location.href='index.html';
+            }
+            /// get arr from local storage 
+            let arr =  JSON.parse(localStorage.getItem("users"));
+            arr.push(user);
+
+            localStorage.setItem("users", JSON.stringify(arr));
+        }
+       
+ var acc = document.getElementsByClassName("cordian");
+for (var i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+    </script>
+</body>
+</html>
